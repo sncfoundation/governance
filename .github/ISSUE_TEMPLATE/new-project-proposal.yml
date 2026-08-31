@@ -1,0 +1,70 @@
+name: "🌱 New Project Proposal"
+description: "Propose a new project for the Sheet-Native Computing Foundation (enters at the Unsaved Draft tier)."
+title: "Proposal: <project name>"
+labels: ["sncf", "new-project"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome to the Sandbox. Every SNCF project starts as an **Unsaved Draft**.
+        Fill this in; the Technical Oversight Cell reviews it at the next reconcile.
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+      description: "It should pun acceptably (Sheet-, -etes, -lux, -lium, …)."
+      placeholder: "Sheetsomething"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Orchestration & Runtime
+        - Certification
+        - Networking & Mesh
+        - CD / GitOps
+        - CLI & Tooling
+        - Clients & Language bindings
+        - Developer platform
+        - AI
+        - WebAssembly
+        - Storage
+        - Observability & FinOps
+        - Cloud connectors
+        - Operating system
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is it?
+      description: "One paragraph. What does it do, and what CNCF/cloud-native thing does it parody?"
+    validations:
+      required: true
+  - type: textarea
+    id: reconciles
+    attributes:
+      label: How does it reconcile?
+      description: "Where is the spreadsheet in the source of truth? What is the desired-state loop?"
+    validations:
+      required: true
+  - type: input
+    id: sponsor
+    attributes:
+      label: Sponsor
+      description: "An existing SNCF project or maintainer vouching for this."
+      placeholder: "Sheeternetes"
+    validations:
+      required: true
+  - type: checkboxes
+    id: oath
+    attributes:
+      label: The Sandbox Oath
+      options:
+        - label: "I understand this project enters at the Unsaved Draft tier and may vanish on refresh."
+          required: true
+        - label: "It reconciles, or intends to."
+          required: true
